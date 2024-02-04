@@ -6,7 +6,13 @@
     <title>Ake & Humphris</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/owt1wbj.css">
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Slick Carousel JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -14,7 +20,7 @@
         <nav>
             <div class="logo-container">
                 <div class="logo">
-                    <img src="static/A&H Small Logo.svg" alt="Logo">
+                    <img src="static/A&H Small Logo.svg" alt="Ake and Humphris Wine Merchants Logo">
                 </div>
             </div>
             <div class="navigation-items">
@@ -33,14 +39,35 @@
     </header>
     <!-- Hero Section -->
     <div class="hero-container">
-        <img src="static/hermes-rivera-aK6WGqxyHFw-unsplash.png" alt="Hero Image">
+        <img src="static/hermes-rivera-aK6WGqxyHFw-unsplash.png" 
+            srcset="static/hermes-rivera-aK6WGqxyHFw-unsplash.png 480w,
+                    static/hermes-rivera-aK6WGqxyHFw-unsplash.png 800w,
+                    static/hermes-rivera-aK6WGqxyHFw-unsplash.png 1200w"
+            sizes="(max-width: 600px) 480px,
+                    (max-width: 1200px) 800px,
+                    1200px"
+            alt="A selection of wine bottles"
+            loading="lazy"
+        />
         <div class="overlay"></div>
         <div class="hero-text">
             <h1>Welcome to</h1>
-            <img src="static/A&H Logo.svg" alt="Logo">
+            <img 
+                src="static/A&H Logo.svg"
+                srcset="static/A&H Logo.svg 480w,
+                        static/A&H Logo.svg 800w,
+                        static/A&H Logo.svg 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="Axe & Humphris Logo"
+                loading="lazy"
+            />
             <button class="shop-button">Shop</button>
         </div>
-        <i class ="gg-chevron-down"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
     </div>
     <!-- About Section -->
     <div class="about-container">
@@ -49,7 +76,17 @@
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum</p>
         </div>
         <div class="column image-content">
-            <img src="static/zan-WrueFKpTlQs-unsplash.png" alt="Who we are image">
+            <img 
+                src="static/zan-WrueFKpTlQs-unsplash.png"
+                srcset="static/zan-WrueFKpTlQs-unsplash.png 480w,
+                        static/zan-WrueFKpTlQs-unsplash.png 800w,
+                        static/zan-WrueFKpTlQs-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="Two hands cheersing two wine glasses"
+                loading="lazy"
+            />
         </div>
     </div>
     <!-- Carousel Section -->
@@ -57,32 +94,70 @@
         <h2 class="carousel-title">Feature wines</h2>
         <div class="carousel">
             <div class="carousel-item">
-                <img src="static/White_wine_1.png" alt="Sauvignon blanc">
+                <img 
+                    src="static/White_wine_1.png" 
+                    srcset="static/White_wine_1.png 480w,
+                            static/White_wine_1.png 800w,
+                            static/White_wine_1.png 1200w"
+                    sizes="(max-width: 600px) 480px,
+                            (max-width: 1200px) 800px,
+                            1200px"
+                    alt="A bottle of Sauvignon Blanc"
+                    loading="lazy"
+                />
                 <h3>Sauvignon blanc</h3>
                 <p>£12.87</p>
                 <button class="carousel-button">Shop</button>
             </div>
             <div class="carousel-item">
-                <img src="static/Red _wine_1.png" alt="Merlot">
+                <img 
+                    src="static/Red _wine_1.png" 
+                    srcset="static/Red _wine_1.png 480w,
+                            static/Red _wine_1.png 800w,
+                            static/Red _wine_1.png1200w"
+                    sizes="(max-width: 600px) 480px,
+                            (max-width: 1200px) 800px,
+                            1200px"
+                    alt="A bottle of Merlot"
+                    loading="lazy"
+                />
                 <h3>Merlot</h3>
                 <p>£12.87</p>
                 <button class="carousel-button">Shop</button>
             </div>
             <div class="carousel-item">
-                <img src="static/White_wine_1.png" alt="Sauvignon blanc">
+                <img 
+                    src="static/White_wine_1.png" 
+                    srcset="static/White_wine_1.png 480w,
+                            static/White_wine_1.png 800w,
+                            static/White_wine_1.png 1200w"
+                    sizes="(max-width: 600px) 480px,
+                            (max-width: 1200px) 800px,
+                            1200px"
+                    alt="A bottle of Sauvignon Blanc"
+                    loading="lazy"
+                />
                 <h3>Sauvignon blanc</h3>
                 <p>£12.87</p>
                 <button class="carousel-button">Shop</button>
             </div>
             <div class="carousel-item">
-                <img src="static/Red _wine_1.png" alt="Merlot">
+                <img 
+                    src="static/Red _wine_1.png" 
+                    srcset="static/Red _wine_1.png 480w,
+                            static/Red _wine_1.png 800w,
+                            static/Red _wine_1.png 1200w"
+                    sizes="(max-width: 600px) 480px,
+                            (max-width: 1200px) 800px,
+                            1200px"
+                    alt="A bottle of Merlot"
+                    loading="lazy"
+                />
                 <h3>Merlot</h3>
                 <p>£12.87</p>
                 <button class="carousel-button">Shop</button>
             </div>
         </div>
-        <button class="prev-btn">&#9664;</button>
-        <button class="next-btn">&#9654;</button>
     </div>
     <!-- Call to Action Section -->
     <div class="cta-container">
@@ -93,11 +168,31 @@
                 <p>View all our wines in our shop</p>
                 <button class="cta-button">All products</button>
             </div>
-            <img src="static/klara-kulikova-CPMZguYURMw-unsplash.png" alt="Wine selection">
+            <img 
+                src="static/klara-kulikova-CPMZguYURMw-unsplash.png" 
+                srcset="static/klara-kulikova-CPMZguYURMw-unsplash.png 480w,
+                        static/klara-kulikova-CPMZguYURMw-unsplash.png 800w,
+                        static/klara-kulikova-CPMZguYURMw-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="A selection of wine bottles on display"
+                loading="lazy"
+            />
         </div>
         <div class="cta-image">
             <div class="overlay"></div>
-            <img src="static/lefteris-kallergis-etWlaoFnTl4-unsplash.png" alt="Wine glass">
+            <img 
+                src="static/lefteris-kallergis-etWlaoFnTl4-unsplash.png" 
+                srcset="static/lefteris-kallergis-etWlaoFnTl4-unsplash.png 480w,
+                        static/lefteris-kallergis-etWlaoFnTl4-unsplash.png 800w,
+                        static/lefteris-kallergis-etWlaoFnTl4-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="A person pouring red wine into a glass"
+                loading="lazy"
+            />
             <div class="cta-content">
                 <h2>Offers</h2>
                 <p>View all our offers</p>
@@ -107,13 +202,63 @@
     </div>
     <div class="about2-container">
         <div class="container-image">
-            <img src="static/adele-payman-2oYMwuFgnTg-unsplash.png" alt="vineyard">
+            <img 
+                src="static/adele-payman-2oYMwuFgnTg-unsplash.png" 
+                srcset="static/adele-payman-2oYMwuFgnTg-unsplash.png 480w,
+                        static/adele-payman-2oYMwuFgnTg-unsplash.png 800w,
+                        static/adele-payman-2oYMwuFgnTg-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="An overview of a vineyard"
+                loading="lazy"
+            />
         </div>
         <div class="about2-images">
-            <img src="static/klara-kulikova-CPMZguYURMw-unsplash.png" alt="wine selection">
-            <img src="static/jassy-onyae-1gBUXhf0PtA-unsplash.png" alt="grapes">
-            <img src="static/jeff-siepman-hK9hIPgF3QU-unsplash.png" alt="wine glass">
-            <img src="static/sven-wilhelm-2cRXSWyMHA8-unsplash.png" alt="vineyard2">
+            <img 
+                src="static/klara-kulikova-CPMZguYURMw-unsplash.png" 
+                srcset="static/klara-kulikova-CPMZguYURMw-unsplash.png 480w,
+                        static/klara-kulikova-CPMZguYURMw-unsplash.png 800w,
+                        static/klara-kulikova-CPMZguYURMw-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="A selection of wine bottles on display"
+                loading="lazy"
+            />
+            <img 
+                src="static/jassy-onyae-1gBUXhf0PtA-unsplash.png" 
+                srcset="static/jassy-onyae-1gBUXhf0PtA-unsplash.png 480w,
+                        static/jassy-onyae-1gBUXhf0PtA-unsplash.png 800w,
+                        static/jassy-onyae-1gBUXhf0PtA-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="Bunch of grapes growing on a vine"
+                loading="lazy"
+             />
+             <img 
+                src="static/jeff-siepman-hK9hIPgF3QU-unsplash.png" 
+                srcset="static/jeff-siepman-hK9hIPgF3QU-unsplash.png 480w,
+                        static/jeff-siepman-hK9hIPgF3QU-unsplash.png 800w,
+                        static/jeff-siepman-hK9hIPgF3QU-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="A person pouring red wine into a glass"
+                loading="lazy"
+            />
+            <img 
+                src="static/sven-wilhelm-2cRXSWyMHA8-unsplash.png" 
+                srcset="static/sven-wilhelm-2cRXSWyMHA8-unsplash.png 480w,
+                        static/sven-wilhelm-2cRXSWyMHA8-unsplash.png 800w,
+                        static/sven-wilhelm-2cRXSWyMHA8-unsplash.png 1200w"
+                sizes="(max-width: 600px) 480px,
+                        (max-width: 1200px) 800px,
+                        1200px"
+                alt="Trees in a vineyard"
+                loading="lazy"
+            />
         </div>
     </div>
     <script src="script.js"></script>

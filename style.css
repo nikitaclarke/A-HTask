@@ -11,7 +11,7 @@
     padding: 0 15px;
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -112,18 +112,20 @@ nav {
     border: 2px solid #FFF8EF;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.gg-chevron-down {
+.shop-button:hover {
+    background-color: #88434B;
+    color: #FFF8EF;
+}
+
+.hero-container svg {
     position: absolute;
     bottom: 50px;
     left: 50%;
-    width: 24px;
-    height: 12px;
-    border: 2px solid transparent;
+    transform: translateX(-50%);
     color: #FFF8EF;
-    --ggs: 2;
 }
 
 /* About Section */
@@ -164,9 +166,7 @@ nav {
 
 .image-content img {
     width: 100%;
-    height: auto; 
-    border-radius: 8px;
-    box-shadow: 5px 5px 30px #00000029;
+    height: auto;
 }
 
 /* Carousel Section */
@@ -196,6 +196,12 @@ nav {
     display: flex;
     transition: transform 0.5s ease-in-out;
     justify-content: center;
+}
+
+.slick-slide img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
 }
 
 .carousel-item {
@@ -243,29 +249,13 @@ nav {
     border: 2px solid #88434B;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
     box-sizing: border-box;
 }
 
-.prev-btn,
-.next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.carousel-button:hover {
     background-color: #FFF8EF;
-    color: #88434B;
-    padding: 10px;
-    border: 2px solid #88434B;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
+    color: #2C3442;
 }
 
 /* Call to Action Section */
@@ -331,10 +321,15 @@ nav {
     border: 2px solid #FFF8EF;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-About2 Section
+.cta-button:hover {
+    background-color: #88434B;
+    color: #FFF8EF;
+}
+
+/* About2 Section */
 .about2-container {
     display: flex;
     flex-direction: column;
@@ -375,10 +370,15 @@ About2 Section
     .hamburger {
         display: flex;
         cursor: pointer;
+        color: black;
     }
 
     .hamburger #closeHam {
         display: none;
+    }
+
+    .navigation-header {
+        background-color: #FFFFFF;
     }
 
     .navigation-items {
@@ -395,6 +395,33 @@ About2 Section
         gap: 10vh;
     }
 
+
+    .navigation-items.show-menu {
+        display: none;
+    }
+    
+    .mobile-nav .navigation-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 80px;
+        background-color: #88434B;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding-top: 60px;
+        gap: 10vh;
+    }
+
+    .mobile-nav .navigation-items > a {
+        color: #FFF8EF;
+    }
+
+    .mobile-nav .navigation-items > a:hover {
+        color: #D5C9BB;
+    }
+
     .about-container {
         padding: 11% 8%;
     } 
@@ -406,16 +433,29 @@ About2 Section
 
     .hero-container {
         background-position: right center;
-        height: 420px;
+        height: 753px;
     }
 
     .hero-text h1 {
         text-align: center;
-        margin-bottom: 10%;
+        margin-bottom: 52px;
+        white-space: nowrap;
     }
 
     .hero-text img {
-        margin-bottom: 10%;
+        content: url(static/A&H\ Roundal\ Logo.svg);
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0 70px;
+    }
+
+    .text-content h2 {
+        line-height: 30px;
+        font-size: 40px;
+    }
+
+    .text-content p {
+        font-size: 14px;
     }
 
     .carousel-item {
@@ -426,6 +466,10 @@ About2 Section
     .carousel-item img {
         max-width: 50%;
         width: 50%;
+    }
+
+    .carousel-title {
+        font-size: 40px;
     }
 
     .cta-container {
@@ -440,6 +484,10 @@ About2 Section
 
     .cta-content {
         max-width: none;
+    }
+
+    .cta-content h2 {
+        font-size: 50px;
     }
 
 }
@@ -461,8 +509,8 @@ About2 Section
         padding: 1.8% 2% 2.2% 2%;
     }
 
-    .hero-text {
-        margin-bottom: 1%;
+    .hero-text h1 {
+        margin-bottom: 40px;
     }
 
     .hero-container {
@@ -474,12 +522,28 @@ About2 Section
         height: 660px;
     }
 
+    .text-content h2 {
+        font-size: 60px;
+    }
+
+    .text-content p {
+        font-size: 16px;
+    }
+
     .carousel-item {
         flex: 0 0 25%;
+    }
+
+    .carousel-title {
+        font-size: 60px;
     }
         
     .cta-container {
         background-position: right center;
         height: 660px;
+    }
+
+    .cta-content h2 {
+        font-size: 100px;
     }
 }

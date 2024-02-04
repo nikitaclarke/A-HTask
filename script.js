@@ -1,57 +1,66 @@
-// Hamburger JS Logic
-let openHam = document.querySelector('#openHam');
-let closeHam = document.querySelector('#closeHam');
-let navigationItems = document.querySelector('#navigation-items');
-
-const hamburgerEvent = (navigation, close, open) => {
-    navigationItems.style.display = navigation;
-    closeHam.style.display = close;
-    openHam.style.display = open;
-};
-
-openHam.addEventListener('click', () => hamburgerEvent("flex", "block", "none"));
-closeHam.addEventListener('click', () => hamburgerEvent("none", "none", "block"));
-
+// Hamburger JS Function
 document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
-    const itemWidth = items[0].offsetWidth;
+    let openHam = document.getElementById('openHam');
+    let closeHam = document.getElementById('closeHam');
+    let navigationItems = document.getElementById('navigation-items');
+    let navbar = document.querySelector('.navigation-header');
 
-    function showItem(index) {
-        carousel.style.transform = `translateX(${-index * itemWidth}px)`;
-    }
+    openHam.addEventListener('click', function () {
+        navigationItems.classList.add('show-menu');
+        closeHam.style.display = 'block';
+        openHam.style.display = 'none';
+        navbar.classList.add('mobile-nav');
+    });
 
-    function updateVisibility() {
-        items.forEach((item, index) => {
-            if (window.innerWidth <= 767) {
-                item.style.display = index === currentIndex ? 'block' : 'none';
-            } else {
-                item.style.display = 'block';
+    closeHam.addEventListener('click', function () {
+        navigationItems.classList.remove('show-menu');
+        closeHam.style.display = 'none';
+        openHam.style.display = 'block';
+        navbar.classList.remove('mobile-nav');
+    });
+
+    // Slick Carousel
+    $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        });
-    }
+        ]
+    });
 
-    function nextItem() {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateVisibility();
-    }
-
-    function prevItem() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateVisibility();
-    }
-
-    document.querySelector('.next-btn').addEventListener('click', nextItem);
-    document.querySelector('.prev-btn').addEventListener('click', prevItem);
-
-    setInterval(nextItem, 5000);
-
-    // Initial setup
-    updateVisibility();
-});
-
-// Update visibility on window resize
-window.addEventListener('resize', function () {
-    updateVisibility();
+    // Update visibility on window resize
+    window.addEventListener('resize', function () {
+        $('.carousel').slick('refresh');
+        if (window.innerWidth > 768) {
+            navigationItems.classList.remove('show-menu');
+            closeHam.style.display = 'none';
+            openHam.style.display = 'block';
+            navbar.classList.remove('mobile-nav');
+        }
+    });
 });
